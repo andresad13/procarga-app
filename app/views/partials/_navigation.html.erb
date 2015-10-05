@@ -1,0 +1,22 @@
+<nav class="navbar navbar-trans navbar-fixed-top animated slideInDown be-transparent" role="navigation">
+  <div class="container">
+    <div class="navbar-collapse collapse" id="navbar-collapsible">
+      <ul class="nav navbar-nav navbar-left">
+        <li> <a href="/" class="be-white"> <i class="fa fa-home"></i> INICIO</a></li>
+        <li><a href="#section1" class="be-white"><i class="fa fa-cogs"></i> ¿COMO FUNCIONA?</a></li>
+        <li><a href="#section1" class="be-white"><i class="fa fa-android"></i> PROCARGA</a></li>
+        <li><a href="#section1" class="be-white"><i class="fa fa-phone"></i> SOPORTE</a></li>
+      </ul><ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      <li class=" be-white"> <i class="fa fa-user"></i> <%= current_user.email%></li>
+      <li class="be-white"> <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link be-white' %></li>
+      <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link be-white'  %></li>
+      <% else %>
+      <li > <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link be-white' %></li>
+      <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link be-white'  %> </li>
+      <% end %>
+      <li>&nbsp;</li>
+    </ul>
+  </div>
+</div>
+</nav>
